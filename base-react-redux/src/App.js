@@ -8,7 +8,7 @@ const App = () => {
   const dispatch = useDispatch();
 
   return (
-    <div>
+    <div className="app-container">
       Trần Công Nghĩa
       <Mycomponent></Mycomponent>
     </div>
