@@ -1,5 +1,6 @@
 import React from "react";
-
+import "./Displayinfor.scss";
+import logo from "./../logo.svg";
 class Displayinfor extends React.Component {
   state = {
     isshowListUser: true,
@@ -15,6 +16,7 @@ class Displayinfor extends React.Component {
 
     return (
       <div>
+        <img src={logo} />
         <div>
           <span
             onClick={() => {

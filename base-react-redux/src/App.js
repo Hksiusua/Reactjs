@@ -1,5 +1,5 @@
 import logo from "./logo.svg";
-import "./App.css";
+import "./App.scss";
 import Mycomponent from "./components/Mycomponent";
 import { useDispatch, useSelector } from "react-redux";
 import { increaseCounter, decreaseCounter } from "./redux/action/counterAction";

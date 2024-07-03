@@ -9,14 +9,19 @@ class Mycomponent extends React.Component {
       { id: 3, name: "linhadzai", age: 60 },
     ],
   };
+
+  handleAddNewUser = (userObj) => {
+    console.log("Check: ", userObj);
+    // coppy the array add userObj the first
+    this.setState({
+      listUsers: [userObj, ...this.state.listUsers],
+    });
+  };
+
   render() {
     return (
       <div>
-        <Userinfor></Userinfor>
-        
-        
-        <br></br>
-        <br></br>
+        <Userinfor handleAddNewUser={this.handleAddNewUser}></Userinfor>
 
         <Displayinfor listUsers={this.state.listUsers}></Displayinfor>
       </div>
