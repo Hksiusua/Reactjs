@@ -1,10 +1,16 @@
 import React from "react";
 import "./Displayinfor.scss";
-import logo from "./../logo.svg";
+// import logo from "./../logo.svg";
 class Displayinfor extends React.Component {
   state = {
     isshowListUser: true,
   };
+
+  componentDidMount() {
+    setTimeout(() => {
+      document.title = "CongNghia ";
+    }, 3000);
+  }
   handleShowHide = () => {
     this.setState({
       isshowListUser: !this.state.isshowListUser,
@@ -16,8 +22,8 @@ class Displayinfor extends React.Component {
 
     return (
       <div>
-        <img src={logo} />
-        <div>
+        {/* <img src={logo} /> */}
+        <>
           <span
             onClick={() => {
               this.handleShowHide();
@@ -28,7 +34,8 @@ class Displayinfor extends React.Component {
               ? "Hide list users"
               : "show list users"}
           </span>
-        </div>
+        </>
+        {/* so you print the screen */}
         {this.state.isshowListUser && (
           <>
             {listUsers.map((user) => {
@@ -36,6 +43,16 @@ class Displayinfor extends React.Component {
                 <div key={user.id} className={user.age > 20 ? "red" : "green"}>
                   <div>My name {user.name}</div>
                   <div>My age {user.age}</div>
+
+                  <div>
+                    <button
+                      onClick={() => {
+                        this.props.handleDeleteUser(user.id);
+                      }}
+                    >
+                      Delete
+                    </button>
+                  </div>
                 </div>
               );
             })}
